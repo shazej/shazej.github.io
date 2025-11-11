@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LumenPath | Hospital Management System — Comprehensive Study</title>
+  <meta name="description" content="Comprehensive study on Hospital Management Systems (HMS): objectives, modules, architecture, security, challenges, trends, and market insights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0b0f14; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --accent:#38bdf8; --line:#1f2937; }
+    * { box-sizing:border-box }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--text); font:16px/1.6 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(10px); background:rgba(11,15,20,.6); border-bottom:1px solid var(--line); }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
+    .brand { font-weight:800; letter-spacing:.3px; }
+    .tag { display:inline-block; padding:2px 8px; border:1px solid var(--line); border-radius:999px; color:var(--muted); font-size:12px; }
+    .hero { padding:56px 0 28px; }
+    h1 { font-size: clamp(28px, 3vw, 44px); line-height:1.15; margin:0 0 12px; }
+    h2 { font-size: clamp(22px, 2.2vw, 30px); margin:40px 0 10px; }
+    h3 { font-size:20px; margin:28px 0 6px; }
+    p { margin: 10px 0 12px; color: #cbd5e1; }
+    .grid { display:grid; grid-template-columns: 260px 1fr; gap:28px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } nav.toc { position:static; top:auto; max-height:none; } }
+    nav.toc { position: sticky; top:76px; align-self:start; max-height: calc(100vh - 90px); overflow:auto; padding-right: 8px; }
+    .toc h3 { font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 6px; }
+    .toc ul { list-style:none; margin:0; padding:0; }
+    .toc a { display:block; padding:6px 10px; border-radius:8px; color:#cbd5e1; font-size:14px; }
+    .toc a.active, .toc a:hover { background: #0f172a; color:#e2e8f0; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid var(--line); border-radius:16px; padding: 22px; }
+    .kpis { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin: 18px 0; }
+    .kpis .pill { background:#0f172a; border:1px solid var(--line); padding:10px 12px; border-radius:12px; color:#e2e8f0; font-size:14px; }
+    .footer { border-top:1px solid var(--line); margin-top:40px; padding:24px 0 60px; font-size:14px; color:var(--muted); }
+    .buttons a { display:inline-block; margin-right:10px; padding:10px 14px; border-radius:10px; border:1px solid var(--line); background:#0f172a; }
+    .section { scroll-margin-top:80px; }
+    /* Simple table */
+    table { width:100%; border-collapse:collapse; margin:10px 0 18px; }
+    th, td { text-align:left; padding:10px 12px; border-bottom:1px dashed var(--line); vertical-align:top; }
+    th { color:#94a3b8; font-weight:600; }
+    code { background:#0f172a; padding:2px 6px; border:1px solid var(--line); border-radius:6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 85%; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">LumenPath</div>
+      <div class="tag">Hospital Management System — Study</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Comprehensive Study on Hospital Management Systems (HMS)</h1>
+      <p>Prepared by LumenPath Trading and Services</p>
+      <div class="buttons">
+        <a href="#contact">Contact</a>
+        <a href="#download" id="downloadBtn">Download as PDF</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <nav class="toc card">
+        <h3>Contents</h3>
+        <ul>
+          <li><a href="#intro">1. Introduction</a></li>
+          <li><a href="#objectives">2. Objectives</a></li>
+          <li><a href="#modules">3. Core Functional Modules</a></li>
+          <li><a href="#architecture">4. Technical Architecture</a></li>
+          <li><a href="#implementation">5. Implementation Considerations</a></li>
+          <li><a href="#security">6. Security & Compliance</a></li>
+          <li><a href="#challenges">7. Challenges</a></li>
+          <li><a href="#trends">8. Future Trends</a></li>
+          <li><a href="#market">9. Global Market Insights</a></li>
+          <li><a href="#conclusion">10. Conclusion</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <article>
+        <section id="intro" class="section card">
+          <h2>1. Introduction</h2>
+          <p>A Hospital Management System (HMS) is an integrated software solution designed to manage the administrative, financial, clinical, and operational aspects of a healthcare institution. The goal is to streamline processes, improve patient care, ensure regulatory compliance, and enhance efficiency across departments.</p>
+          <p>Modern HMS platforms leverage cloud computing, AI, and interoperability standards (HL7/FHIR) to enable seamless coordination between patients, clinicians, laboratories, and external health systems.</p>
+        </section>
+
+        <section id="objectives" class="section card">
+          <h2>2. Objectives of a Hospital Management System</h2>
+          <ul>
+            <li>Operational efficiency via automation of scheduling, billing, and inventory management.</li>
+            <li>Data centralization across departments in a unified platform.</li>
+            <li>Improved patient care through real-time access to comprehensive medical history.</li>
+            <li>Cost reduction by minimizing redundancy, waste, and human error.</li>
+            <li>Regulatory compliance with healthcare standards and data protection laws.</li>
+            <li>Scalability for multi-facility operations and remote clinics.</li>
+          </ul>
+        </section>
+
+        <section id="modules" class="section card">
+          <h2>3. Core Functional Modules</h2>
+          <h3>A. Patient Management</h3>
+          <ul>
+            <li>Registration, demographics, appointment scheduling, and queue management.</li>
+            <li>Inpatient and outpatient tracking; discharge summaries and follow-ups.</li>
+          </ul>
+          <h3>B. Electronic Medical Records (EMR)</h3>
+          <ul>
+            <li>Centralized records, clinical notes, diagnoses, and prescription management.</li>
+            <li>Integration with LIS and radiology modules; real-time physician access.</li>
+          </ul>
+          <h3>C. Billing and Financial Management</h3>
+          <ul>
+            <li>Automated billing for consultations, labs, pharmacy, room charges.</li>
+            <li>Insurance claim workflows, payment gateway integration, revenue cycle management.</li>
+          </ul>
+          <h3>D. Laboratory Information System (LIS)</h3>
+          <ul>
+            <li>Test orders, results tracking, equipment interfacing, barcoding, and QC.</li>
+          </ul>
+          <h3>E. Pharmacy Management</h3>
+          <ul>
+            <li>Drug inventory and expiry tracking, e-prescriptions, vendor management.</li>
+          </ul>
+          <h3>F. Inventory and Asset Management</h3>
+          <ul>
+            <li>Real-time supplies and equipment tracking; reorder automation; vendor analytics.</li>
+          </ul>
+          <h3>G. Human Resource & Payroll</h3>
+          <ul>
+            <li>Staff records, attendance, scheduling, payroll, and performance tools.</li>
+          </ul>
+          <h3>H. Administrative & Analytics</h3>
+          <ul>
+            <li>Dashboards by department; KPIs, occupancy rates, and decision-support analytics.</li>
+          </ul>
+        </section>
+
+        <section id="architecture" class="section card">
+          <h2>4. Technical Architecture</h2>
+          <p>HMS solutions typically follow modular SOA or microservices. A reference stack:</p>
+          <table>
+            <thead>
+              <tr><th>Layer</th><th>Description</th><th>Typical Tech</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Presentation</td><td>Web, mobile, kiosks for patients, clinicians, admins</td><td>React, Vue, Flutter</td></tr>
+              <tr><td>Application</td><td>Business logic and workflow automation</td><td>Node.js, Java, .NET</td></tr>
+              <tr><td>Data</td><td>Centralized clinical/admin data stores</td><td>PostgreSQL, MySQL, Redis</td></tr>
+              <tr><td>Integration</td><td>Interoperability and device/insurer connectivity</td><td>REST/GraphQL, HL7, FHIR, PACS/RIS</td></tr>
+            </tbody>
+          </table>
+          <div class="kpis">
+            <div class="pill">AI/ML for forecasting & triage</div>
+            <div class="pill">Cloud or Hybrid deployments</div>
+            <div class="pill">Telemedicine-ready</div>
+          </div>
+        </section>
+
+        <section id="implementation" class="section card">
+          <h2>5. Implementation Considerations</h2>
+          <h3>Custom vs. Off‑the‑Shelf</h3>
+          <p>Custom systems align closely to workflow and scale; packaged solutions reduce time-to-value for small/midsize institutions.</p>
+          <h3>Deployment Models</h3>
+          <ul>
+            <li>On‑premise for data control and very large hospitals.</li>
+            <li>Cloud for lower capex and multi-site networks.</li>
+            <li>Hybrid for scalability with local data residency.</li>
+          </ul>
+          <h3>Key Integrations</h3>
+          <ul>
+            <li>HL7/FHIR, PACS/RIS, insurer/claim portals, government registries.</li>
+          </ul>
+        </section>
+
+        <section id="security" class="section card">
+          <h2>6. Security & Compliance</h2>
+          <ul>
+            <li>Encryption at rest (AES‑256) and in transit (TLS 1.3).</li>
+            <li>Role‑based access control (RBAC) and least privilege.</li>
+            <li>Immutable audit logging and monitoring.</li>
+            <li>Local and international privacy regulations (HIPAA/GDPR and regional laws).</li>
+            <li>Backups, disaster recovery, and tested incident response.</li>
+          </ul>
+        </section>
+
+        <section id="challenges" class="section card">
+          <h2>7. Challenges</h2>
+          <ul>
+            <li>Change management and digital literacy.</li>
+            <li>Data migration from legacy/paper systems.</li>
+            <li>Complex third‑party integrations.</li>
+            <li>Cybersecurity threats, ransomware, and vendor risk.</li>
+            <li>ROI justification and multi‑country regulatory differences.</li>
+          </ul>
+        </section>
+
+        <section id="trends" class="section card">
+          <h2>8. Future Trends</h2>
+          <ul>
+            <li>AI‑driven decision support and automation.</li>
+            <li>Predictive analytics for demand and staffing.</li>
+            <li>Voice/ambient documentation for clinicians.</li>
+            <li>Patient portals and mobile engagement apps.</li>
+            <li>National health data exchanges and public health integration.</li>
+          </ul>
+        </section>
+
+        <section id="market" class="section card">
+          <h2>9. Global Market Insights</h2>
+          <p>Estimated 2025 HMS market size: ~USD 60B; projected CAGR 11–13% toward 2030. Drivers include healthcare digitization initiatives, telemedicine growth, and AI adoption. High activity in GCC, Asia‑Pacific, and North America.</p>
+        </section>
+
+        <section id="conclusion" class="section card">
+          <h2>10. Conclusion</h2>
+          <p>HMS platforms are central to digital health transformation, elevating operational efficiency and patient outcomes. Aligning with AI, interoperability standards, and rigorous security makes the solution globally competitive.</p>
+        </section>
+
+        <section id="contact" class="section card">
+          <h2>Contact</h2>
+          <p><strong>LumenPath Trading and Services</strong><br>
+             Phone: +974 5517 0700<br>
+             Email: <a href="mailto:info@lumen-path.com">info@lumen-path.com</a></p>
+          <p>For meetings, schedule via: <a href="https://calendly.com/lumen-path-info/30min" target="_blank" rel="noopener">calendly.com/lumen-path-info/30min</a></p>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer wrap">
+      <div>© <span id="year"></span> LumenPath Trading and Services</div>
+      <div style="margin-top:6px">This is a static site ready for GitHub Pages. Customize styles in the <code>&lt;style&gt;</code> block. To use a custom domain, add a <code>CNAME</code> file at the repository root with your domain and configure DNS.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Highlight active section in TOC
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const sections = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const onScroll = () => {
+      let idx = 0;
+      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top - 90 <= 0) idx = i; });
+      tocLinks.forEach(l => l.classList.remove('active'));
+      if (tocLinks[idx]) tocLinks[idx].classList.add('active');
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple print-to-PDF
+    document.getElementById('downloadBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      window.print();
+    });
+  </script>
+</body>
+</html>
