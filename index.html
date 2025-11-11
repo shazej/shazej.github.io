@@ -258,3 +258,207 @@
   </script>
 </body>
 </html>
+
+<!-- ================== ADDITIONAL FILES FOR GITHUB PAGES ==================
+Copy the snippets below into separate files in your repository. They are
+optional but recommended. -->
+
+
+<!-- ================== FILE: README.md ================== -->
+<!-- Save as: README.md -->
+<!-- (Markdown) -->
+<!--
+# LumenPath HMS — GitHub Pages Site
+
+This repository hosts a static GitHub Pages website for the LumenPath Hospital Management System (HMS) comprehensive study.
+
+## Quick Start
+1. Ensure `index.html` is in the repository root.
+2. Go to **Settings → Pages** and set **Build and deployment** to "Deploy from a branch" → Branch: `main`, Folder: `/ (root)`.
+3. Optional: add a custom domain—create a `CNAME` file and point DNS.
+
+## Structure
+- `index.html` — single‑file site (dark theme, sticky ToC, print to PDF)
+- `CNAME` (optional) — your custom domain, e.g. `hms.lumen-path.com`
+
+## Local Preview (optional)
+Open `index.html` in a browser or use any static server (e.g. `python -m http.server`).
+
+## License
+Copyright © LumenPath Trading and Services. All rights reserved.
+-->
+
+
+<!-- ================== FILE: CNAME (template) ================== -->
+<!-- Save as: CNAME (no extension). Replace with your domain: -->
+<!--
+hms.lumen-path.com
+-->
+
+
+<!-- ================== OPTIONAL: JEKYLL (MARKDOWN) VARIANT ================== -->
+<!--
+If you prefer editing content in Markdown, use Jekyll. Create these files:
+
+1) _config.yml
+--------------------------------------------------
+title: LumenPath HMS — Study
+description: Comprehensive study on Hospital Management Systems (HMS)
+theme: minima
+# For project pages, set baseurl to /REPO-NAME (e.g., /lumenpath-hms)
+# baseurl: "/lumenpath-hms"
+url: "https://USERNAME.github.io"
+# If using a custom domain, set: url: https://hms.lumen-path.com
+
+2) index.md
+--------------------------------------------------
+---
+layout: default
+title: LumenPath HMS — Comprehensive Study
+---
+
+# Comprehensive Study on Hospital Management Systems (HMS)
+Prepared by **LumenPath Trading and Services**
+
+[Download as PDF](#){: .button download}
+
+## 1. Introduction
+A Hospital Management System (HMS) is an integrated software solution designed to manage the administrative, financial, clinical, and operational aspects of a healthcare institution. The goal is to streamline processes, improve patient care, ensure regulatory compliance, and enhance efficiency across departments.
+
+Modern HMS platforms leverage cloud computing, AI, and interoperability standards (HL7/FHIR) to enable seamless coordination between patients, clinicians, laboratories, and external health systems.
+
+## 2. Objectives of a Hospital Management System
+- Operational efficiency via automation of scheduling, billing, and inventory management.
+- Data centralization across departments in a unified platform.
+- Improved patient care through real-time access to comprehensive medical history.
+- Cost reduction by minimizing redundancy, waste, and human error.
+- Regulatory compliance with healthcare standards and data protection laws.
+- Scalability for multi-facility operations and remote clinics.
+
+## 3. Core Functional Modules
+### A. Patient Management
+- Registration, demographics, appointment scheduling, and queue management.
+- Inpatient and outpatient tracking; discharge summaries and follow-ups.
+
+### B. Electronic Medical Records (EMR)
+- Centralized records, clinical notes, diagnoses, and prescription management.
+- Integration with LIS and radiology modules; real-time physician access.
+
+### C. Billing and Financial Management
+- Automated billing for consultations, labs, pharmacy, room charges.
+- Insurance claim workflows, payment gateway integration, revenue cycle management.
+
+### D. Laboratory Information System (LIS)
+- Test orders, results tracking, equipment interfacing, barcoding, and QC.
+
+### E. Pharmacy Management
+- Drug inventory and expiry tracking, e-prescriptions, vendor management.
+
+### F. Inventory and Asset Management
+- Real-time supplies and equipment tracking; reorder automation; vendor analytics.
+
+### G. Human Resource & Payroll
+- Staff records, attendance, scheduling, payroll, and performance tools.
+
+### H. Administrative & Analytics
+- Dashboards by department; KPIs, occupancy rates, and decision-support analytics.
+
+## 4. Technical Architecture
+| Layer        | Description                                   | Typical Tech                  |
+|--------------|-----------------------------------------------|-------------------------------|
+| Presentation | Web, mobile, kiosks for patients/clinicians   | React, Vue, Flutter           |
+| Application  | Business logic and workflow automation        | Node.js, Java, .NET           |
+| Data         | Centralized clinical/admin data stores        | PostgreSQL, MySQL, Redis      |
+| Integration  | Interoperability & device/insurer connectivity| REST/GraphQL, HL7, FHIR, PACS |
+
+**Highlights**: AI/ML for forecasting & triage; Cloud/Hybrid deployments; Telemedicine-ready.
+
+## 5. Implementation Considerations
+### Custom vs. Off‑the‑Shelf
+Custom systems align closely to workflow and scale; packaged solutions reduce time-to-value for small/midsize institutions.
+
+### Deployment Models
+- On‑premise for data control and very large hospitals.
+- Cloud for lower capex and multi-site networks.
+- Hybrid for scalability with local data residency.
+
+### Key Integrations
+- HL7/FHIR, PACS/RIS, insurer/claim portals, government registries.
+
+## 6. Security & Compliance
+- Encryption at rest (AES‑256) and in transit (TLS 1.3).
+- Role‑based access control (RBAC) and least privilege.
+- Immutable audit logging and monitoring.
+- Local/international privacy regulations (HIPAA/GDPR and regional laws).
+- Backups, disaster recovery, and tested incident response.
+
+## 7. Challenges
+- Change management and digital literacy.
+- Data migration from legacy/paper systems.
+- Complex third‑party integrations.
+- Cybersecurity threats and vendor risk.
+- ROI justification and multi‑country regulatory differences.
+
+## 8. Future Trends
+- AI‑driven decision support and automation.
+- Predictive analytics for demand and staffing.
+- Voice/ambient documentation for clinicians.
+- Patient portals and mobile engagement apps.
+- National health data exchanges and public health integration.
+
+## 9. Global Market Insights
+Estimated 2025 HMS market size: ~USD 60B; projected CAGR 11–13% toward 2030. Drivers include healthcare digitization initiatives, telemedicine growth, and AI adoption. High activity in GCC, Asia‑Pacific, and North America.
+
+## 10. Conclusion
+HMS platforms are central to digital health transformation, elevating operational efficiency and patient outcomes.
+
+## Contact
+**LumenPath Trading and Services**  
+Phone: +974 5517 0700  
+Email: info@lumen-path.com  
+Schedule: https://calendly.com/lumen-path-info/30min
+
+3) _layouts/default.html
+--------------------------------------------------
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="wrap">
+    <h1>{{ site.title }}</h1>
+    <p class="muted">{{ site.description }}</p>
+    <nav><a href="/">Home</a></nav>
+  </header>
+  <main class="wrap">
+    {{ content }}
+  </main>
+  <footer class="wrap muted">
+    © {{ "now" | date: "%Y" }} LumenPath Trading and Services
+  </footer>
+</body>
+</html>
+
+4) assets/css/style.css
+--------------------------------------------------
+:root { --bg:#0b0f14; --text:#e5e7eb; --muted:#94a3b8; --line:#1f2937; }
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.muted{color:var(--muted)}
+a{color:#38bdf8;text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.2}
+code,pre{background:#0f172a;border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.button{display:inline-block;border:1px solid var(--line);padding:8px 12px;border-radius:10px}
+
+5) .gitignore (optional)
+--------------------------------------------------
+.DS_Store
+_site/
+.sass-cache/
+.jekyll-cache/
+-->
+
