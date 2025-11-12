@@ -1,0 +1,331 @@
+Below is a complete, multi‑page GitHub Pages (Jekyll) site you can paste into your repo `shazej.github.io`. It creates:
+
+* Home (HMS overview)
+* Partner Proposal (for external partners)
+* Implementation Playbook (internal/operational)
+* Contact page
+
+It uses a lightweight custom layout and CSS (no external build tooling). No mention of the country appears anywhere.
+
+---
+
+## File tree
+
+```
+/_layouts
+  default.html
+/assets/css
+  style.css
+_config.yml
+index.md
+proposal.md
+playbook.md
+contact.md
+README.md
+```
+
+---
+
+### 1) `_config.yml`
+
+```yaml
+title: LumenPath HMS
+description: Hospital Management System — multi‑org deployment
+url: "https://shazej.github.io"
+baseurl: "" # user site must keep this empty
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+```
+
+---
+
+### 2) `_layouts/default.html`
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}" />
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+  <header class="wrap header">
+    <div class="brand"><a href="{{ "/" | relative_url }}">LumenPath</a></div>
+    <nav class="nav">
+      <a href="{{ "/" | relative_url }}">Home</a>
+      <a href="{{ "/proposal/" | relative_url }}">Partner Proposal</a>
+      <a href="{{ "/playbook/" | relative_url }}">Implementation Playbook</a>
+      <a href="{{ "/contact/" | relative_url }}">Contact</a>
+    </nav>
+  </header>
+  <main class="wrap main">
+    {{ content }}
+  </main>
+  <footer class="wrap footer">
+    <div>© {{ "now" | date: "%Y" }} LumenPath Trading and Services</div>
+  </footer>
+</body>
+</html>
+```
+
+---
+
+### 3) `assets/css/style.css`
+
+```css
+:root { --bg:#0b0f14; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --accent:#38bdf8; --line:#1f2937; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1050px;margin:0 auto;padding:0 20px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,15,20,.6);backdrop-filter:blur(12px)}
+.brand{font-weight:800;letter-spacing:.3px}
+.nav a{margin-left:14px}
+.main{padding:30px 0}
+.footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:22px;margin:14px 0}
+h1{font-size:clamp(28px,3vw,42px);line-height:1.15;margin:0 0 10px}
+h2{font-size:clamp(22px,2.2vw,30px);margin:26px 0 8px}
+h3{font-size:19px;margin:18px 0 6px}
+p{color:#cbd5e1}
+ul{margin:8px 0 16px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px dashed var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.pill{background:#0f172a;border:1px solid var(--line);padding:10px 12px;border-radius:10px;color:#e2e8f0}
+.btn{display:inline-block;border:1px solid var(--line);background:#0f172a;padding:10px 14px;border-radius:10px}
+.small{font-size:14px;color:var(--muted)}
+```
+
+---
+
+### 4) `index.md`
+
+```markdown
+---
+layout: default
+title: Hospital Management System — Overview
+permalink: /
+---
+
+# Comprehensive Study on Hospital Management Systems (HMS)
+Prepared by **LumenPath Trading and Services**
+
+<div class="card">
+<p>This site presents a complete overview of an HMS along with a deployable partner proposal and a detailed implementation playbook for rolling out to multiple organizations within the same country.</p>
+</div>
+
+## Objectives
+- Operational efficiency via automation of scheduling, billing, and inventory.
+- Unified data platform across departments.
+- Improved patient care with real-time clinical access.
+- Cost reduction and error minimization.
+- Compliance with healthcare data protection laws.
+- Scalable design for multi-facility networks.
+
+## Core Modules
+- Patient Administration, EMR, Billing/RCM, LIS, Pharmacy
+- Inventory & Assets, HR/Payroll, Admin & Analytics
+
+## Technical Architecture
+- Presentation: Web/mobile portals
+- Application: Modular services with workflow engine
+- Data: Per‑tenant Postgres + object storage
+- Integration: REST/GraphQL, HL7/FHIR, PACS/RIS
+
+<div class="kpis">
+  <div class="pill">AI/ML decision support</div>
+  <div class="pill">Telemedicine‑ready</div>
+  <div class="pill">Cloud/Hybrid deployments</div>
+</div>
+
+For commercial details and timeline, see the **[Partner Proposal](/proposal/)**. For operations and deployment steps, see the **[Implementation Playbook](/playbook/)**.
+```
+
+---
+
+### 5) `proposal.md` (Partner-facing; no country mentioned)
+
+```markdown
+---
+layout: default
+title: Partner Proposal — Multi‑Organization HMS Deployment
+permalink: /proposal/
+---
+
+# Partner Proposal — Hospital Management System (HMS)
+
+## Executive Summary
+LumenPath proposes a multi‑tenant HMS deployment for five independent healthcare organizations. The solution preserves strict data isolation per organization while leveraging a shared, secure platform to accelerate rollout, reduce cost, and standardize care and operations.
+
+## Scope of Work
+- Configure core HMS modules per organization (Patient Admin, EMR, Billing/RCM, LIS, Pharmacy, Inventory, HR/Payroll, Analytics).
+- Per‑org theming, SSO integration, and role‑based access control.
+- Interoperability with labs, imaging, and insurer gateways.
+- Data migration from legacy sources and validation.
+- Training, cutover support, and hypercare.
+
+## Tenancy & Isolation Model
+- **Recommended:** One codebase; **one Postgres database per organization**.
+- Dedicated object storage prefixes, per‑org encryption keys (KMS), VPC network segmentation.
+- Immutable audit trails and org‑scoped logging.
+
+## Reference Architecture
+- **Frontend:** React web portal (+ optional mobile).
+- **APIs:** Modular services with tenant middleware.
+- **Data:** Postgres per org; Redis for cache/queues; S3‑compatible storage.
+- **Interoperability:** HL7 v2, FHIR R4, DICOM/PACS; insurer e‑claim interfaces.
+- **Security:** TLS 1.3, AES‑256 at rest, WAF, EDR, vulnerability scanning, backups with PITR.
+
+## Rollout Plan (Indicative)
+- **Phase 0 — Discovery (3 weeks):** Stakeholders, workflows, integrations, data mapping, compliance review.
+- **Phase 1 — Pilot (1 org, 8–10 weeks):** Configuration, 2–3 integrations, migration, UAT, training, go‑live + 2‑week hypercare.
+- **Phase 2 — Scale (4 orgs, 10–14 weeks):** Two parallel workstreams; ~2 orgs per month cadence; re‑use integration adapters.
+
+Total reference duration: **~5–7 months** for all five organizations (integration complexity may adjust timelines).
+
+## Service Levels & Support
+- **SLA:** 99.9% (business hours) or 99.95% (24/7) options.
+- **Support:** Tiered escalation (Org Helpdesk → LumenPath App Support → Engineering).
+- **Incident:** P1 ≤ 30‑minute response; post‑mortems ≤ 48 hours.
+
+## Deliverables
+- Solution design & integration specs; Security & compliance plan; Data migration plan & reports; UAT sign‑off; Go‑live runbook; Hypercare plan; SLA handbook; Training report; KPI baseline.
+
+## Pricing Models (illustrative)
+- **Per bed/month** tiers; or **Per active user/month** by role.
+- **One‑time:** Implementation, integrations, data migration, training.
+- Optional: Premium support, dedicated DR, analytics pack, telemedicine module.
+
+## Assumptions & Dependencies
+- Availability of org SMEs for discovery, UAT, and training.
+- Access to legacy data and integration endpoints.
+- Agreed maintenance windows; change management participation.
+
+## Acceptance Criteria
+- UAT pass on critical workflows; data reconciliation within ±1% variance; SLA activation; training completion ≥ 90%; governance and security controls verified.
+```
+
+---
+
+### 6) `playbook.md` (Internal/operational; can be shared selectively)
+
+```markdown
+---
+layout: default
+title: Implementation Playbook — Multi‑Organization HMS
+permalink: /playbook/
+---
+
+# Implementation Playbook — HMS (5 Organizations)
+
+## 1. Governance & Compliance
+- Sign DPA/BAA equivalents per organization; define data residency, retention, and access controls.
+- Appoint Security Officer and Privacy Officer roles; finalize audit scope and cadence.
+
+## 2. Environment Setup
+- Primary region within country, DR region as permitted; VPC per environment (dev/test/stage/prod).
+- Secrets in KMS/HSM; per‑org keys; org‑scoped buckets/prefixes.
+
+## 3. Identity & Access
+- SSO (SAML/OIDC) per org; MFA; RBAC roles; least‑privilege policies.
+- JIT provisioning or SCIM; quarterly access reviews.
+
+## 4. Data Model & Migration
+- Mapping: patients, providers, encounters, orders, results, claims, inventory.
+- Normalize ICD‑10, LOINC, ATC; deduplicate patient masters.
+- Two dress rehearsals; reconcile reports before cutover.
+
+## 5. Integrations
+- HL7/FHIR interfaces for LIS, PACS/RIS; insurer e‑claims; payment gateway.
+- Device interfacing: barcoding, analyzers, vitals; message broker for events.
+
+## 6. Security Engineering
+- TLS 1.3; AES‑256; signed audit logs; endpoint protection; vulnerability scans; WAF.
+- Backups: PITR; immutable snapshots; RPO 15 min; RTO 4 hrs; DR runbooks tested semi‑annually.
+
+## 7. Application Configuration
+- Per‑org theming; clinical templates; order sets; tariffs; roles & permissions; notifications.
+- Feature flags for org‑specific rules; avoid code forks.
+
+## 8. Testing & UAT
+- Unit/integration tests; interface simulators; performance baseline.
+- UAT scenarios per department; sign‑off gates.
+
+## 9. Training & Change Management
+- Role‑based curricula; train‑the‑trainer; micro‑videos and quick guides.
+- Adoption metrics: e‑order usage, turnaround times, claim first‑pass rate.
+
+## 10. Cutover & Hypercare
+- Freeze window; final delta import; go‑live checklist; command center.
+- Hypercare 1–2 weeks; daily standups; issue triage; knowledge transfer.
+
+## 11. Operations & SLAs
+- Monitoring: availability, latency, error budgets, per‑org dashboards.
+- Incident mgmt: P1/P2 flows; post‑mortems; problem mgmt.
+- Change mgmt: CAB for major changes; maintenance windows.
+
+## 12. KPI Pack (90‑day)
+- Registration cycle time; OPD wait time; ADT accuracy; e‑Orders; TAT; claim FPR; DSO; stock‑outs; bed occupancy; OR utilization; uptime; MTTR; CSAT; clinician NPS.
+```
+
+---
+
+### 7) `contact.md`
+
+```markdown
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
+# Contact
+**LumenPath Trading and Services**  
+Phone: +974 5517 0700  
+Email: info@lumen-path.com  
+Schedule a meeting: https://calendly.com/lumen-path-info/30min
+```
+
+---
+
+### 8) `README.md`
+
+````markdown
+# LumenPath HMS — GitHub Pages (Jekyll)
+
+This repository hosts a multi‑page site for the LumenPath Hospital Management System: Overview, Partner Proposal, and Implementation Playbook.
+
+## How to publish
+1. Ensure these files are in the repo root and committed to `main`.
+2. In **Settings → Pages**, set **Build and deployment** to "Deploy from a branch"; Branch: `main`; Folder: `/ (root)`.
+3. Your site will be available at https://shazej.github.io with pages:
+   - `/` (Home)
+   - `/proposal/`
+   - `/playbook/`
+   - `/contact/`
+
+## Local preview (optional)
+Jekyll is not required to preview basic Markdown, but for an exact build:
+```bash
+# requires Ruby + Bundler + jekyll (optional)
+bundle add jekyll && bundle exec jekyll serve
+````
+
+## Notes
+
+* This bundle intentionally avoids any mention of the country while remaining region‑appropriate.
+* Customize styles in `assets/css/style.css`.
+
+```
+
+---
+
+**Instructions:** Create the folders in your repo and paste each file’s content as shown. Commit to `main`. GitHub Pages will build the site automatically.
+
+```
