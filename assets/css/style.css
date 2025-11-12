@@ -1,71 +1,22 @@
-
-
----
-
-
-### 9) `features.md`
-```markdown
----
-layout: default
-title: HMS Features — Core & Enterprise
-permalink: /features/
----
-
-
-# HMS Features — Core & Enterprise
-This page outlines the feature set we will deliver for multi‑organization deployments. It is grouped into core clinical/administrative capabilities and enterprise‑grade platform features.
-
-
-## 1) Clinical & Care Delivery
-- **Electronic Health Record (EHR):** encounters, problems, allergies, vitals, orders, results, notes, discharge summaries.
-- **Computerized Provider Order Entry (CPOE):** labs, imaging, medications with order sets and approvals.
-- **Medication Management:** e‑prescribing, formulary support, interactions/duplication checks, MAR.
-- **Scheduling:** outpatient/inpatient, clinics, wards, operating rooms; wait‑list & overbooking rules.
-- **Care Pathways & Decision Support:** evidence‑based protocols, alerts, task lists, care plans.
-
-
-## 2) Revenue Cycle & Administration
-- **Registration & ADT:** patient demographics, admissions, transfers, discharges, bed management.
-- **Billing & Claims (RCM):** tariffs, packages, insurance rules, pre‑authorizations, e‑claims, remittance, denials.
-- **Cashiering & Payments:** POS integration, refunds, discounts/waivers with audit.
-- **Contracts & Pricing:** payer contracts, price lists, promotions; multi‑org configuration.
-- **Inventory & Procurement:** stock, expiry, reorder points, vendors, purchase orders, GRN.
-- **Pharmacy:** inventory, dispensing, batch/lot tracking, narcotics controls.
-- **HR & Payroll:** rosters, attendance, payroll formulas, roles & privileges.
-
-
-## 3) Diagnostics & Ancillary
-- **Laboratory (LIS):** orders, sample collection/barcoding, interfacing with analyzers, QC, result validation, reports.
-- **Radiology (RIS/PACS integration):** worklists, modality integration (DICOM), structured reports, imaging viewer (via PACS).
-- **Blood Bank & OT:** eligibility checks, cross‑match tracking; theatre lists, implants/consumables capture.
-
-
-## 4) Interoperability & Integrations
-- **Standards:** HL7 v2, **FHIR R4** resources, DICOM for imaging.
-- **External Systems:** insurer/TPA e‑claims, payment gateways, government registries where applicable.
-- **Device & IoT:** bedside devices, vitals, barcode scanners; message broker for real‑time events.
-
-
-## 5) Analytics & Reporting
-- **Operational Dashboards:** registration, occupancy, OR utilization, TAT, claim first‑pass rate.
-- **Clinical Analytics:** disease registries, cohort tracking, quality indicators.
-- **Data Warehouse Connectors:** export to lake/warehouse; scheduled reports; CSV/JSON extracts.
-
-
-## 6) Security, Privacy & Compliance
-- **Access Controls:** SSO (SAML/OIDC), MFA, RBAC with least privilege.
-- **Protection:** TLS 1.3, AES‑256 at rest; separate encryption keys per organization.
-- **Auditability:** immutable audit logs for access/changes; retention policies; tamper‑evident storage.
-- **Resilience:** PITR backups, immutable snapshots; RPO ≤ 15 min, RTO ≤ 4 hrs (configurable by tier).
-
-
-## 7) Multi‑Organization & Platform
-- **Tenancy:** one database per organization; isolated storage prefixes; org‑scoped logs.
-- **Configuration:** theming, forms, order sets, tariffs, roles/permissions per organization.
-- **Feature Flags & Extensions:** enable/disable modules per site; plug‑in hooks.
-- **Environments & DevOps:** CI/CD, blue‑green deploys, observability per org.
-
-
-## 8) Patient Engagement & Telehealth
-- **Patient Portal:** appointments, results, documents, invoices, payments.
-**Status:** This page is a living spec and can be used as a checklist for each organization. Link it in proposals and SOWs as Appendix A.
+:root { --bg:#0b0f14; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --accent:#38bdf8; --line:#1f2937; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1050px;margin:0 auto;padding:0 20px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,15,20,.6);backdrop-filter:blur(12px)}
+.brand{font-weight:800;letter-spacing:.3px}
+.nav a{margin-left:14px}
+.main{padding:30px 0}
+.footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:22px;margin:14px 0}
+h1{font-size:clamp(28px,3vw,42px);line-height:1.15;margin:0 0 10px}
+h2{font-size:clamp(22px,2.2vw,30px);margin:26px 0 8px}
+h3{font-size:19px;margin:18px 0 6px}
+p{color:#cbd5e1}
+ul{margin:8px 0 16px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px dashed var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.pill{background:#0f172a;border:1px solid var(--line);padding:10px 12px;border-radius:10px;color:#e2e8f0}
+.btn{display:inline-block;border:1px solid var(--line);background:#0f172a;padding:10px 14px;border-radius:10px}
+.small{font-size:14px;color:var(--muted)}
