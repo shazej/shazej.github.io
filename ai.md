@@ -1,6 +1,3 @@
-Below is an additional page for your GitHub Pages Jekyll site. It introduces a new section **AI Capabilities** (`ai.md`) and links it in the top navigation.
-
----
 
 ### 10) `ai.md`
 
