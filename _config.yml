@@ -1,4 +1,8 @@
 title: LumenPath HMS
-description: Hospital Management System — multi-organization deployment
+description: Hospital Management System — multi‑org deployment
 url: "https://shazej.github.io"
-baseurl: ""   # MUST be empty for user sites
+baseurl: "" # user site must keep this empty
+permalink: pretty
+markdown: kramdown
+kramdown:
+input: GFM
